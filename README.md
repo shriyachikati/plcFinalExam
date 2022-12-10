@@ -1,11 +1,10 @@
 # PLC Final Exam
 
 ## 10. Syntactically valid assignment statements with atleast 7 tokens:
-```txt
+`txt
 int a = b + 2 - c;
-```
+`
 The above assignment statement passes the semantic rules. 
-
 
 
 ```txt
