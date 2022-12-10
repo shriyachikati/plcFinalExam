@@ -61,6 +61,12 @@ expr(<variable1> (+|-|*|/) <variable2>)
 M_expr(<variable1> (+|-|*|/) <variable2>):
             expr M_b(<variable1> (+|-|*|/) <variable2>) == error;
                         return error;
+             expr M_b(<variable1> (+|-|*|/) <variable2>)
+            {
+             if M_statement(<variable1> (+|-|*|/) <variable2>) == error
+                        return error;
+             } 
+             return M_statement(<variable1> (+|-|*|/) <variable2>)
 ```
 
 
@@ -72,6 +78,14 @@ expr(<variable1> (+|-|*|/) <variable2>)
 M_expr(<variable1> (+|-|*|/) <variable2>):
             expr M_b(<variable1> (+|-|*|/) <variable2>) == error;
                         return false;
+             expr M_b(<variable1> (+|-|*|/) <variable2>) == error;
+                        return false;
+             expr M_b(<variable1> (+|-|*|/) <variable2>)
+            {
+             expr M_statement(<variable1> (+|-|*|/) <variable2>) == error
+                        return false;
+             } 
+             return M_statement(<variable1> (+|-|*|/) <variable2>)
 ```
 
 
