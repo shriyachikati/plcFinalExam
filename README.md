@@ -25,16 +25,16 @@ STRING_LITERAL.type -> STRING
 Expression.type -> 
 if (Expression1.type == STRING and Expression2.type == STRING)
     then STRING
-  else if (Expression1.type == STRING and Expression2.type == INTEGER)
-    then STRING
-  else if (Expression1.type == INTEGER and Expression2.type == STRING)
-    then STRING
+<!--   else if (Expression1.type == STRING and Expression2.type == INTEGER) -->
+<!--     then STRING -->
+<!--   else if (Expression1.type == INTEGER and Expression2.type == STRING) -->
+<!--     then STRING -->
   else if (Expression1.type == INTEGER and Expression2.type == INTEGER)
     then INTEGER
-  else if (Expression1.type == BOOLEAN and Expression2.type == INTEGER)
-    then INTEGER
-  else if (Expression1.type == INTEGER and Expression2.type == BOOLEAN)
-    then INTEGER
+<!--   else if (Expression1.type == BOOLEAN and Expression2.type == INTEGER) -->
+<!--     then INTEGER -->
+<!--   else if (Expression1.type == INTEGER and Expression2.type == BOOLEAN) -->
+<!--     then INTEGER -->
   else if (Expression1.type == CHAR and Expression2.type == INTEGER)
     then INTEGER
   else if (Expression1.type == INTEGER and Expression2.type == CHAR)
@@ -47,7 +47,7 @@ if (Expression1.type == STRING and Expression2.type == STRING)
     
 UNARY_NEGATION.type -> Expression.type
 
-AssignmentStatement.type ->
+Statement.type ->
   if (IDENTIFIER.type == STRING and Expression.type == STRING)
     then STRING
   else if (IDENTIFIER.type == STRING and Expression.type == INTEGER)
@@ -87,6 +87,7 @@ AssignmentStatement.error -> Expression.error
 
 
 ## 10. Three syntactically valid assignment statements with atleast 7 tokens:
+
 ```txt
 int a = b + 2 - c;
 ```
